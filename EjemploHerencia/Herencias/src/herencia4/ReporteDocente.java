@@ -15,4 +15,43 @@ import java.util.ArrayList;
 public class ReporteDocente extends Reporte{
     double promedioSueldos;
     ArrayList<Docente> lista;
+    
+    public ReporteDocente(String c){
+        super(c);
+    }
+    
+    public void establecerLista(ArrayList<Docente> listado){
+        lista = listado;
+    }
+    
+    public void calcularPromedio(){
+        double suma = 0;
+        for (int i = 0; i < lista.size(); i++) {
+            suma += lista.get(i).getSueldo();
+        }
+        promedioSueldos = suma/lista.size();
+    }
+    
+    public ArrayList<Docente> obtenerLista(){
+        return lista;
+    }
+    
+    public double obtenerPromedio(){
+        return promedioSueldos;
+    }
+    
+    @Override
+    
+    public String toString(){
+        String cadena = String.format("Reporte de Docentes (%s): \n", super.toString());
+        
+        for (int i = 0; i < lista.size(); i++) {
+            cadena = String.format("%s%s. %s\n", cadena, i+1 ,lista.get(i));
+        }
+        
+        cadena = String.format("%sPromedio de Sueldos: %.2f\n", cadena,
+                                                                promedioSueldos);
+        
+        return cadena;
+    }
 }

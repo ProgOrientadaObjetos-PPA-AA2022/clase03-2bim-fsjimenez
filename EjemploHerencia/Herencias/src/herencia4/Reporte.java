@@ -11,4 +11,14 @@ package herencia4;
  */
 public class Reporte {
    protected String codigo;
+   
+   public Reporte(String c){
+       codigo = c;
+   }
+   
+   public String toString(){
+       String cadena = String.format("%s", codigo);
+       return cadena;
+   }
+ 
 }

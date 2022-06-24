@@ -23,6 +23,7 @@ public class EjecutaEstudiante {
         double costoAsig;
         int numeroAsigs;
         int tipoEstudiante;
+        int limite = 3;
         String continuar;
 
         // b. Incio ciclo repetitivo que permite generar objetos de tipo
